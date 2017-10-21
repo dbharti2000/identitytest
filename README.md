@@ -23,6 +23,10 @@ Part 2:
 4. By default it's running on chrome browser as i've provided browser:"chrome" in the config.properties file.
 
 
+Execute Cucumber Test -
+
+Open the Test in the IDE e.g. Eclipse or Idea Intellij, right click on feature file and run it.
+
 
 
 
