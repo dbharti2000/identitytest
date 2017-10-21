@@ -36,11 +36,11 @@ public class DriverFactory {
     }
 
     public static WebDriver getFireFoxDriver() {
-        File pathToBinary = new File("/Applications/Firefox.app/Contents/MacOS/firefox");
-        FirefoxBinary ffBinary = new FirefoxBinary(pathToBinary);
-        FirefoxProfile firefoxProfile = new FirefoxProfile();
-        WebDriver firefoxDriver = new FirefoxDriver(ffBinary, firefoxProfile);
+        WebDriver firefoxDriver = new FirefoxDriver();
+        // maximize window
+        firefoxDriver.manage().window().maximize();
         return firefoxDriver;
+
     }
 
     public static WebDriver getChromeDriver() throws IOException {

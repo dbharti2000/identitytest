@@ -7,10 +7,12 @@
     <groupId>com.bharti.identity</groupId>
     <artifactId>identity</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <name>test</name>
+    <url>http://maven.apache.org</url>
 
     <properties>
-        <cucumber-version>1.2.4</cucumber-version>
-        <junit-version>1.2.4</junit-version>
+        <cucumber-version>1.2.5</cucumber-version>
+        <junit-version>1.2.5</junit-version>
     </properties>
 
     <dependencies>
@@ -31,11 +33,12 @@
             <version>${cucumber-version}</version>
             <scope>test</scope>
         </dependency>
-        <!--<dependency>-->
-            <!--<groupId>info.cukes</groupId>-->
-            <!--<artifactId>cucumber-jvm</artifactId>-->
-            <!--<version>1.2.4</version>-->
-        <!--</dependency>-->
+        <dependency>
+            <groupId>info.cukes</groupId>
+            <artifactId>cucumber-jvm</artifactId>
+            <version>1.2.5</version>
+            <type>pom</type>
+        </dependency>
         <dependency>
             <groupId>info.cukes</groupId>
             <artifactId>cucumber-junit</artifactId>
@@ -44,7 +47,7 @@
         <dependency>
             <groupId>info.cukes</groupId>
             <artifactId>cucumber-picocontainer</artifactId>
-            <version>1.2.4</version>
+            <version>1.2.5</version>
             <scope>test</scope>
         </dependency>
         <dependency>
