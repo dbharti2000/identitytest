@@ -31,6 +31,7 @@ public class CarDetailsCheckStepDef {
     public void i_navigate_to_the_hotel_booking_form_page() throws Throwable {
         dvlaVehicleInformationPage = new DvlaVehicleInformationPage(driver);
         dvlaVehicleInformationPage.open();
+        dvlaVehicleInformationPage.assertTitle();
     }
 
     @When("^I check the vehicles information provided in the csv file$")

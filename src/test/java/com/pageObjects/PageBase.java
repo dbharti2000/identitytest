@@ -1,6 +1,7 @@
 package com.pageObjects;
 
 
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -27,6 +28,9 @@ public class PageBase {
         driver.get(URL);
     }
 
+    public void assertTitle() {
+        Assert.assertEquals(pageTitle, driver.getTitle());
+    }
 
     public void waitForPageToLoad() throws InterruptedException {
         driver.manage().timeouts().implicitlyWait(DEFAULT_WAIT_4_PAGE, TimeUnit.SECONDS);

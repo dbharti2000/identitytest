@@ -3,19 +3,27 @@ package com.pageObjects;
 /* This is the page class for dvla website, it has all the elements accessors and it defines the
 * methods to perform funtions on the website. */
 
+import com.DirectoryUtility;
+import com.FileFormatSupported;
+import com.FileInfo;
 import com.opencsv.CSVReader;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.List;
+
 import static org.hamcrest.CoreMatchers.containsString;
 import static org.hamcrest.MatcherAssert.assertThat;
 
 public class DvlaVehicleInformationPage extends PageBase {
-    private final static String CSV_PATH = "src/test/resources/test.csv";
-    private final static String pageTitle = "1Get vehicle information from DVLA - GOV.UK";
 
+    private String dataFolder =
+            getClass().getResource("/data").getPath();
+    private String csvFileName;
+    private static final String pageTitle = "Get vehicle information from DVLA - GOV.UK";
 
 
     public DvlaVehicleInformationPage(WebDriver driver) {
@@ -25,7 +33,13 @@ public class DvlaVehicleInformationPage extends PageBase {
 
 
     public void checkVehicleInformation() throws FileNotFoundException, InterruptedException {
-        CSVReader reader = new CSVReader(new FileReader(CSV_PATH));
+
+        DirectoryUtility directoryUtil = new DirectoryUtility();
+        List<FileInfo> fileInfos = directoryUtil.extractFileInfo(dataFolder, FileFormatSupported.CSV);
+
+        //Find the first csv file by using directory utility class and use the csv file as a source of data
+        csvFileName = dataFolder + "/" + fileInfos.get(0).getFileName();
+        CSVReader reader = new CSVReader(new FileReader(csvFileName));
         String[] csvCell;
 
         driver.findElement(By.cssSelector("#get-started a")).click();

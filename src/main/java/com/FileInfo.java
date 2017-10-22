@@ -2,42 +2,42 @@ package com;
 
 public class FileInfo {
 
-    private static String fileName;
-    private static long fileSize;
-    private static String fileExtension;
-    private static String mimeType;
+    private String fileName;
+    private long fileSize;
+    private String fileExtension;
+    private String mimeType;
 
-    public static void setFileName(String fileName) {
-        FileInfo.fileName = fileName;
+    public void setFileName(String fileName) {
+        this.fileName = fileName;
     }
 
-    public static String getFileName() {
+    public String getFileName() {
         return fileName;
     }
 
-    public static void setMimeType(String mimeType) {
-        FileInfo.mimeType = mimeType;
+    public void setMimeType(String mimeType) {
+        this.mimeType = mimeType;
     }
 
-    public static String getMimeType() {
+    public String getMimeType() {
         return mimeType;
     }
 
 
-    public static void setSize(long fileSize) {
-        FileInfo.fileSize = fileSize;
+    public void setSize(long fileSize) {
+        this.fileSize = fileSize;
     }
 
-    public static long getSize() {
+    public long getSize() {
         return fileSize;
     }
 
 
-    public static void setFileExtension(String fileExtension) {
-        FileInfo.fileExtension = fileExtension;
+    public void setFileExtension(String fileExtension) {
+        this.fileExtension = fileExtension;
     }
 
-    public static String getFileExtension() {
+    public String getFileExtension() {
         return fileExtension;
     }
 }

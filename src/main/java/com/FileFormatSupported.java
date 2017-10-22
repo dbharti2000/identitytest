@@ -3,7 +3,7 @@ package com;
 public enum FileFormatSupported {
     CSV("csv"),
     Excel("xlsx"),
-    OTHERS("");
+    ANY("");
 
     private final String name;
 
