@@ -26,7 +26,7 @@ public class DirectoryValidationTest {
     @Test
     public void testExtractFileDetailsForOthers() {
         List<FileInfo> fileInfos = DirectoryUtility.extractFileInfo(dataFolder, FileFormatSupported.ANY);
-        Assert.assertNotEquals(1, fileInfos.size());
+        Assert.assertEquals(4, fileInfos.size());
         System.out.println("Total Number of files of any type = " + fileInfos.size());
     }
 
