@@ -43,7 +43,6 @@ public class DvlaVehicleInformationPage extends PageBase {
         String[] csvCell;
 
         driver.findElement(By.cssSelector("#get-started a")).click();
-        waitForPageToLoad();
 
         try {
             while ((csvCell = reader.readNext()) != null) {
@@ -66,7 +65,6 @@ public class DvlaVehicleInformationPage extends PageBase {
                 assertThat("Expected Value =>" + expectedCarColour + " does not match the Actual =>" + actualCarColour, containsString(expectedCarColour.toUpperCase()));
 
                 driver.findElement(By.cssSelector(".link-back")).click();
-                waitForPageToLoad();
             }
         } catch (IOException e) {
             e.printStackTrace();

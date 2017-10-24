@@ -17,7 +17,7 @@ public class PageBase {
     protected WebDriver driver;
     protected String pageTitle;
 
-    public static final int DEFAULT_WAIT_4_PAGE = 12;
+    public static final int DEFAULT_WAIT_FOR_PAGE = 12;
 
     public PageBase(WebDriver myDriver, String pageTitle) {
         this.driver = myDriver;
@@ -31,9 +31,5 @@ public class PageBase {
     public void assertTitle() {
         Assert.assertEquals(pageTitle, driver.getTitle());
     }
-
-    public void waitForPageToLoad() throws InterruptedException {
-        driver.manage().timeouts().implicitlyWait(DEFAULT_WAIT_4_PAGE, TimeUnit.SECONDS);
-    }
-
 }
+
